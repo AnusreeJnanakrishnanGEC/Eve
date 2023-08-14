@@ -1,3 +1,11 @@
+import 'package:eve/UI/H.dart';
+import 'package:eve/UI/Journal.dart';
+import 'package:eve/UI/Moments.dart';
+import 'package:eve/UI/Savings.dart';
+import 'package:eve/UI/Travel.dart';
+import 'package:eve/UI/US.dart';
+import 'package:eve/UI/Wish.dart';
+import 'package:eve/UI/Workspace.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -27,7 +35,7 @@ class _HomeState extends State<Home> {
               ),
             ),
 
-            child: const Column(
+            child: Column(
               children:[
 
                 SizedBox(height: 40),
@@ -37,22 +45,38 @@ class _HomeState extends State<Home> {
                   children: [
                     Padding(
                       padding: EdgeInsets.fromLTRB(30, 10, 100, 10),
-                        child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/savings.jpg"),
-                        radius: 50,
-                        backgroundColor: Colors.transparent,
-                          ),
+                        child: GestureDetector(
+                          child: CircleAvatar(
+                          backgroundImage: AssetImage("assets/images/savings.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Savings()));
+                            },
+                        ),
                       ),
 
 
                     Padding(
                       padding: EdgeInsets.fromLTRB(2, 10, 60, 10),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/travel.jpg"),
-                        radius: 50,
-                        backgroundColor: Colors.transparent,
+                      child: GestureDetector(
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage("assets/images/travel.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Travel()));
+                        },
                       ),
-                    )
+                    ),
                   ],
                 ),
 
@@ -75,20 +99,36 @@ class _HomeState extends State<Home> {
                   children: [
                     Padding(
                       padding: EdgeInsets.fromLTRB(30, 50, 100, 10),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/wish.jpg"),
-                        radius: 50,
-                        backgroundColor: Colors.transparent,
+                      child: GestureDetector(
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage("assets/images/wish.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Wish()));
+                        },
                       ),
                     ),
 
 
                     Padding(
                       padding: EdgeInsets.fromLTRB(2, 50, 60, 10),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/us.jpg"),
-                        radius: 50,
-                        backgroundColor: Colors.transparent,
+                      child: GestureDetector(
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage("assets/images/us.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Us()));
+                        },
                       ),
                     )
                   ],
@@ -112,20 +152,36 @@ class _HomeState extends State<Home> {
                   children: [
                     Padding(
                       padding: EdgeInsets.fromLTRB(30, 50, 100, 10),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/homee.jpg"),
-                        radius: 50,
-                        backgroundColor: Colors.transparent,
+                      child: GestureDetector(
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage("assets/images/homee.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => H()));
+                        },
                       ),
                     ),
 
 
                     Padding(
                       padding: EdgeInsets.fromLTRB(2, 50, 60, 10),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/cam.jpg"),
-                        radius: 50,
-                        backgroundColor: Colors.transparent,
+                      child: GestureDetector(
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage("assets/images/cam.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Moments()));
+                        },
                       ),
                     )
                   ],
@@ -149,20 +205,36 @@ class _HomeState extends State<Home> {
                   children: [
                     Padding(
                       padding: EdgeInsets.fromLTRB(30, 50, 100, 10),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/journal.jpg"),
-                        radius: 50,
-                        backgroundColor: Colors.transparent,
+                      child: GestureDetector(
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage("assets/images/journal.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Journal()));
+                        },
                       ),
                     ),
 
 
                     Padding(
                       padding: EdgeInsets.fromLTRB(2, 50, 60, 10),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/personal.jpg"),
-                        radius: 50,
-                        backgroundColor: Colors.transparent,
+                      child: GestureDetector(
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage("assets/images/personal.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Workspace()));
+                        },
                       ),
                     ),
                   ],
