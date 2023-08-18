@@ -1,11 +1,11 @@
-import 'package:eve/UI/H.dart';
-import 'package:eve/UI/Journal.dart';
-import 'package:eve/UI/Moments.dart';
-import 'package:eve/UI/Savings.dart';
-import 'package:eve/UI/Travel.dart';
-import 'package:eve/UI/US.dart';
-import 'package:eve/UI/Wish.dart';
-import 'package:eve/UI/Workspace.dart';
+import 'package:eve/UI/Home/H.dart';
+import 'package:eve/UI/Journal/Journal.dart';
+import 'package:eve/UI/Moments/Moments.dart';
+import 'package:eve/UI/Savings/Savings.dart';
+import 'package:eve/UI/Travel/Travel.dart';
+import 'package:eve/UI/US/US.dart';
+import 'package:eve/UI/Wish/Wish.dart';
+import 'package:eve/UI/Workspace/Workspace.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
