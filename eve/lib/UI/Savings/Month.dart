@@ -22,6 +22,7 @@ class _MonthState extends State<Month> {
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body:Container(
+
         constraints: const BoxConstraints(minHeight: 900),
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -31,7 +32,7 @@ class _MonthState extends State<Month> {
         ),
         child: AnimationLimiter(
           child: ListView.builder(
-            padding: EdgeInsets.all(_w / 30),
+            padding: EdgeInsets.all(_w / 20),
             physics:
             BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
             itemCount: 12,
@@ -47,28 +48,40 @@ class _MonthState extends State<Month> {
                     duration: Duration(milliseconds: 1500),
                     curve: Curves.fastLinearToSlowEaseIn,
                     child: Container(
-                      child: Center(child: Text(list[index],style: TextStyle(color:Colors.white,fontSize: 30,fontWeight: FontWeight.bold,
-                        shadows: [
-                          Shadow(
-                            blurRadius:10.0,  // shadow blur
-                            color: Colors.pink, // shadow color
-                            offset: Offset(2.0,2.0), // how much shadow will be shown
+                      height: 100,
+                      width: 60,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Card(
+                          color: Colors.transparent,
+                          child: Column(
+                            children: [
+                              Text(list[index],style: TextStyle(color:Colors.white,fontSize: 30,fontWeight: FontWeight.bold,
+                            shadows: [
+                              Shadow(
+                                blurRadius:10.0,  // shadow blur
+                                //color: Colors.pink, // shadow color
+                                offset: Offset(2.0,2.0), // how much shadow will be shown
+                              ),
+                            ],
                           ),
-                        ],
-                      )),
-                      ),
-                      margin: EdgeInsets.only(bottom: _w / 20),
-                      height: _w / 4,
-                      decoration: BoxDecoration(
-                        color:Color(0xFFEC407A),
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 40,
-                            spreadRadius: 10,
+                            ),
+                              TextField(
+                                decoration: InputDecoration(
+                                  hintText: 'Savings',
+                                  hintStyle: TextStyle(
+                                      fontSize: 18, color: Colors.white),
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                          ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),

@@ -1,3 +1,4 @@
+import 'package:eve/UI/Wish/Wishes.dart';
 import 'package:flutter/material.dart';
 
 class Wish extends StatefulWidget {
@@ -11,24 +12,38 @@ class _WishState extends State<Wish> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: SingleChildScrollView(
+      body: Container(
+        constraints: BoxConstraints(minWidth: 500,minHeight: 900),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/wishes.jpg"),
+              fit: BoxFit.cover
+          ),
+        ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(40, 250, 10, 10),
+          padding:EdgeInsets.all(60.0),
           child: Container(
-            width: 300,
-            height: 300,
-            padding: new EdgeInsets.all(10.0),
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
+            padding: new EdgeInsets.fromLTRB(10, 250, 10, 250),
+            child: GestureDetector(
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Center(
+                  child: Text("My Wishes",style: TextStyle(
+                      color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold
+                  ),
+                  ),
+                ),
+                color: Colors.transparent,
+                shadowColor: Colors.pink,
+                surfaceTintColor: Colors.green,
+                //elevation: 20,
               ),
-              child: Center(
-                child: Text("Wishes",style: TextStyle(
-                    color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold
-                ),),
-              ),
-              color: Colors.pink,
-              elevation: 20,
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder: (context) => Wishes()),
+                );
+              },
             ),
           ),
         ),

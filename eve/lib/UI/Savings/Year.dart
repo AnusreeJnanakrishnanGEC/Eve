@@ -26,7 +26,7 @@ class _YearState extends State<Year> {
         constraints: const BoxConstraints(minHeight: 900),
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/year.jpg"),
+            image: AssetImage("assets/images/savings_bg.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -48,12 +48,13 @@ class _YearState extends State<Year> {
                       curve: Curves.fastLinearToSlowEaseIn,
                       child: FadeInAnimation(
                         child: GestureDetector(
-                          child: Container(
+                          child: Card(
+                            color: Colors.transparent,
                             child: Center(child: Text(list[index],style: TextStyle(color:Colors.white,fontSize: 30,fontWeight: FontWeight.bold,
                               shadows: [
                                 Shadow(
                                   blurRadius:10.0,  // shadow blur
-                                  color: Colors.white, // shadow color
+                                  //color: Colors.pink, // shadow color
                                   offset: Offset(2.0,2.0), // how much shadow will be shown
                                 ),
                               ],
@@ -61,17 +62,6 @@ class _YearState extends State<Year> {
                             ),
                             margin: EdgeInsets.only(
                                 bottom: _w / 20, left: _w / 30, right: _w / 30),
-                            decoration: BoxDecoration(
-                              color: Colors.pink,
-                              borderRadius: BorderRadius.all(Radius.circular(20)),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.1),
-                                  blurRadius: 40,
-                                  spreadRadius: 10,
-                                ),
-                              ],
-                            ),
                           ),
                 onTap: (){
                 Navigator.push(context,MaterialPageRoute(builder: (context) => Month()),

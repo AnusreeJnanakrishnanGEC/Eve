@@ -14,34 +14,40 @@ class _SavingsState extends State<Savings> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.pink,
+        title: Text("Year"),
       ),
       body: Container(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(40, 120, 10, 10),
-            child: Container(
-              width: 300,
-              height: 400,
-              padding: new EdgeInsets.all(10.0),
-              child: GestureDetector(
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  child: Center(
-                    child: Text("Year",style: TextStyle(
-                      color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold
-                    ),
-                    ),
-                  ),
-                  color: Colors.pink,
-                  elevation: 20,
+        constraints: BoxConstraints(minWidth: 500,minHeight: 900),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/saving.jpg"),
+          fit: BoxFit.cover
+          ),
+        ),
+        child: Padding(
+          padding:EdgeInsets.all(60.0),
+          child: Container(
+            padding: new EdgeInsets.fromLTRB(10, 110, 10, 200),
+            child: GestureDetector(
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
                 ),
-                onTap: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => Year()),
-                  );
-                },
+                child: Center(
+                  child: Text("Year",style: TextStyle(
+                    color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold
+                  ),
+                  ),
+                ),
+                color: Colors.transparent,
+                shadowColor: Colors.pink,
+                surfaceTintColor: Colors.green,
+                //elevation: 20,
               ),
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder: (context) => Year()),
+                );
+              },
             ),
           ),
         ),
