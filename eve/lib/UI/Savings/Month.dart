@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../Utils/constants.dart';
 
 class Month extends StatefulWidget {
-  const Month({super.key});
+  String year;
+   Month({super.key,required this.year});
 
   @override
   State<Month> createState() => _MonthState();
@@ -11,8 +15,33 @@ class Month extends StatefulWidget {
 
 class _MonthState extends State<Month> {
   List<String> list = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  TextEditingController savingsController = TextEditingController();
+
+  @override
+  void initState() {
+    getSharedPrefernceData();
+    super.initState();
+  }
+
+  void getSharedPrefernceData() async{
+    SharedPreferences prefs=await SharedPreferences.getInstance();
+    var savings = prefs.getString(Constants.SAVINGS);
+    if("$savings" != "null"){
+      savingsController.text = "$savings";
+    }
+    print(savings);
+  }
+
+  void setSharedPreferenceData(controllerData) async{
+    SharedPreferences pref=await SharedPreferences.getInstance();
+    pref.setString(Constants.SAVINGS, "$controllerData");
+    getSharedPrefernceData();
+  }
+
   @override
   Widget build(BuildContext context) {
+
     double _w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
@@ -67,8 +96,15 @@ class _MonthState extends State<Month> {
                           ),
                             ),
                               TextField(
+                                controller: savingsController,
                                 decoration: InputDecoration(
                                   hintText: 'Savings',
+                                  suffixIcon: IconButton(
+                                    icon: Icon(Icons.save),
+                                    onPressed: (){
+                                      setSharedPreferenceData(savingsController.text);
+                                    },
+                                  ),
                                   hintStyle: TextStyle(
                                       fontSize: 18, color: Colors.white),
                                   enabledBorder: UnderlineInputBorder(

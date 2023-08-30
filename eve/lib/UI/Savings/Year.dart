@@ -64,7 +64,7 @@ class _YearState extends State<Year> {
                                 bottom: _w / 20, left: _w / 30, right: _w / 30),
                           ),
                 onTap: (){
-                Navigator.push(context,MaterialPageRoute(builder: (context) => Month()),
+                Navigator.push(context,MaterialPageRoute(builder: (context) => Month( year: list[index],)),
                 );
                 },
                       ),
