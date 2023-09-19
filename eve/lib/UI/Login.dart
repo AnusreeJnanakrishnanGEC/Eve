@@ -57,7 +57,7 @@ class _LoginState extends State<Login> {
                           child: TextField(
                             decoration: InputDecoration(
                               prefixIcon: Icon(Icons.account_circle_outlined),
-                              hintText: 'Usename',
+                              hintText: 'Username',
                               hintStyle: TextStyle(
                                   fontSize: 18, color: Colors.white),
                               enabledBorder: UnderlineInputBorder(

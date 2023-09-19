@@ -9,22 +9,34 @@ class Workspace extends StatefulWidget {
 }
 
 class _WorkspaceState extends State<Workspace> {
-  var currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.pink,
-      ),
-      body: Container(
-    constraints: const BoxConstraints(minHeight: 900),
-    decoration: const BoxDecoration(
-    image: DecorationImage(
-    image: AssetImage("assets/images/work.jpg"),
-    fit: BoxFit.cover,
-    ),
-    ),
+    final TabPages=<Widget>[
+    const Center(child: Icon(Icons.cloud),),
+      const Center(child: Icon(Icons.account_circle_outlined),),
+      const Center(child: Icon(Icons.padding),)
+    ];
+
+
+    final Tabname=<Tab>[
+      const Tab(text: 'tab1'),
+      const Tab(text: 'tab2'),
+      const Tab(text: 'tab3'),
+    ];
+    return DefaultTabController(
+     length: TabPages.length,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.pink,
+          title: Text("My Workspace"),
+          bottom: TabBar(
+            tabs:TabPages
+          ),
+        ),
+        body: TabBarView(
+          children: Tabname,
+        )
       ),
     );
   }
