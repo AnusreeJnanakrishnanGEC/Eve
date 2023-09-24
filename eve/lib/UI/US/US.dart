@@ -1,4 +1,3 @@
-import 'package:eve/UI/US/Together.dart';
 import 'package:eve/UI/US/test.dart';
 import 'package:flutter/material.dart';
 import 'package:animator/animator.dart';

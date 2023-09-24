@@ -51,12 +51,15 @@ class _TravelState extends State<Travel> {
                             child: Center(child: Text(places[index],style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 30),)),
                           ),
                           onTap: (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => visited()),
-                            );
-                          },
-                          onDoubleTap: (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => Notvisited()),
-                            );
+                            if (index==0) {
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (context) => visited()),
+                              );
+                            }
+                            else{
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => Notvisited()),
+                              );
+                            }
                           },
                         ),
                       ),

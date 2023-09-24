@@ -12,39 +12,36 @@ class _WishState extends State<Wish> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: Container(
-        constraints: BoxConstraints(minWidth: 500,minHeight: 900),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/wishes.jpg"),
-              fit: BoxFit.cover
-          ),
-        ),
-        child: Padding(
-          padding:EdgeInsets.all(60.0),
-          child: Container(
-            padding: new EdgeInsets.fromLTRB(10, 250, 10, 250),
-            child: GestureDetector(
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                child: Center(
-                  child: Text("My Wishes",style: TextStyle(
-                      color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold
-                  ),
-                  ),
-                ),
-                color: Colors.transparent,
-                shadowColor: Colors.pink,
-                surfaceTintColor: Colors.green,
-                //elevation: 20,
-              ),
-              onTap: (){
-                Navigator.push(context,MaterialPageRoute(builder: (context) => Wishes()),
-                );
-              },
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+
+          constraints: const BoxConstraints(minHeight: 900),
+          //constraints: BoxConstraints(minWidth: 500,minHeight: 900),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/wishes.png"),
+                fit: BoxFit.cover
             ),
+          ),
+          child: Row(
+            //mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(170,5,10,650),
+                child: GestureDetector(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage("assets/images/butterfly.jpg"),
+                    radius: 30,
+                  ),
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => Wishes()),
+                    );
+                  },
+                ),
+              )
+            ],
           ),
         ),
       ),

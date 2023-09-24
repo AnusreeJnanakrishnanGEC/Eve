@@ -11,4 +11,9 @@ class Constants{
   static String OCTSAVINGS="OCTSavings";
   static String NOVSAVINGS="NOVSavings";
   static String DECSAVINGS="DECSavings";
+  static String WISHES1="MyWishes1";
+  static String WISHES2="MyWishes2";
+  static String WISHES3="MyWishes3";
+  static String WISHES4="MyWishes4";
+  static String WISHES5="MyWishes5";
 }
